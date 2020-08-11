@@ -62,6 +62,8 @@ public class DmSearchServiceImpl implements DmSearchService {
         // 从Redis获取当前服务节点为谁
         String updatecore = UPDATE_CORE;
         String currentCore = CURRENT_CORE;
+        redisService.set(updatecore,"book");
+        redisService.set(currentCore,"book1");
         String updatecoreName = redisService.get(updatecore, String.class);
         String currentCoreName = redisService.get(currentCore, String.class);
         log.info("当前备份的索引集合为{}，正在服务中的索引集合为{}", updatecoreName, currentCoreName);
@@ -99,7 +101,7 @@ public class DmSearchServiceImpl implements DmSearchService {
             result = result.add(BigInteger.ONE);
             iterator.next();
         }
-        log.info("books数据库中记录为{}，存入es{}", readBooks.size(), result);
+        log.info("books数据库中记录为{}，存入es记录条数为{}", readBooks.size(), result);
         return result;
     }
 }
