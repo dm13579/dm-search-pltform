@@ -1,0 +1,3 @@
+# Project exclude paths
+/dm-search-mbg/target/
+/dm-search-service/target/
