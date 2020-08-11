@@ -57,6 +57,7 @@ public class DmSearchServiceImpl implements DmSearchService {
         //  通过redis（基于分布式考虑用redis不用本地缓存）判断当前使用的是什么副本，来用于查询
         //  目的：后续数据索引重建可以先对副本进行索引重建，重建完成使用副本切换，用户无感知。
         //  实现有点问题，后续实现。。。
+        //  现在版本：直接sql数据直接导入Es
         log.info("开始对book索引进行全量重建");
         // 从Redis获取当前服务节点为谁
         String updatecore = UPDATE_CORE;
