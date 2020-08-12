@@ -41,7 +41,7 @@ public class EsBook implements Serializable {
     private Integer commentNum;
     private Integer price;
 
-    @Field(analyzer = "ik_max_word", type = FieldType.Text)
+    @Field(type = FieldType.Keyword)
     private String category;
 
     @Field(analyzer = "ik_max_word", type = FieldType.Text)

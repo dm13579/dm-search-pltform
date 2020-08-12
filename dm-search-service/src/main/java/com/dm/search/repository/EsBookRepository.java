@@ -17,10 +17,11 @@ public interface EsBookRepository extends ElasticsearchRepository<EsBook, Long> 
      * 搜索查询
      *
      * @param name        名称
+     * @param author      作者
      * @param discription 描述
      * @param page        分页信息
      * @return
      */
-    Page<EsBook> findByNameOrDiscription(String name, String discription, Pageable page);
+    Page<EsBook> findByNameOrAuthorOrDiscription(String name, String author, String discription, Pageable page);
 
 }

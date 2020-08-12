@@ -3,6 +3,7 @@ package com.dm.search.controller;
 import com.dm.search.common.CommonPage;
 import com.dm.search.common.CommonResult;
 import com.dm.search.model.EsBook;
+import com.dm.search.model.EsBookRelatedInfo;
 import com.dm.search.service.DmSearchService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class SearchController {
     @RequestMapping(value = "/importAll", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<BigInteger> importAllList() {
-        BigInteger count = dmSearchService.importAll();
+        BigInteger count = dmSearchService.importBookIndex();
         return CommonResult.success(count, "添加成功");
     }
 
@@ -45,12 +46,25 @@ public class SearchController {
      * @param pageSize 每页数
      * @return
      */
-    @RequestMapping(value = "/search/simple", method = RequestMethod.POST)
+    @RequestMapping(value = "/simple", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<CommonPage<EsBook>> search(@RequestParam(required = false) String keyword,
                                                    @RequestParam(required = false, defaultValue = "0") Integer pageNum,
                                                    @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
         Page<EsBook> esProductPage = dmSearchService.search(keyword, pageNum, pageSize);
         return CommonResult.success(CommonPage.restPage(esProductPage));
+    }
+
+    /**
+     * 获取搜索词相关分类（eq: 以搜索词过滤，过滤结果聚合分类名称）
+     *
+     * @param keyword 关键词
+     * @return
+     */
+    @RequestMapping(value = "/searchRelatedInfo", method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult<EsBookRelatedInfo> searchRelatedInfo(@RequestParam(required = false) String keyword) {
+        EsBookRelatedInfo esBookRelatedInfo = dmSearchService.searchRelatedInfo(keyword);
+        return CommonResult.success(esBookRelatedInfo);
     }
 }

@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: search-service
+  cloud:
+      nacos:
+        config:
+          server-addr: #配置中心地址
+          file-extension: yml
+          shared-dataids: common-nacos.yml,common-db.yml #公共配置
+          refreshable-dataids: common-nacos.yml,common-db.yml
+  profiles:
+    active: dev
