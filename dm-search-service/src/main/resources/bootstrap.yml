@@ -4,7 +4,7 @@ spring:
   cloud:
       nacos:
         config:
-          server-addr: #配置中心地址
+          server-addr: 122.51.157.42:8848 #配置中心地址
           file-extension: yml
           shared-dataids: common-nacos.yml,common-db.yml #公共配置
           refreshable-dataids: common-nacos.yml,common-db.yml
