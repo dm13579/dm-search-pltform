@@ -6,12 +6,12 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
-  * @className EsBookRelatedInfo 
-  * @description ES book 相关属性
-  * @author dm
-  * @date 2020/8/12
-  * @since JDK1.8
-  */
+ * @author dm
+ * @className EsBookRelatedInfo
+ * @description ES book 相关属性
+ * @date 2020/8/12
+ * @since JDK1.8
+ */
 @Data
 public class EsBookRelatedInfo implements Serializable {
 

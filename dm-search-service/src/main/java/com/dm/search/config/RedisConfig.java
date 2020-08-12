@@ -13,12 +13,12 @@ import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
-  * @className RedisConfig 
-  * @description redis 配置
-  * @author dm
-  * @date 2020/8/11
-  * @since JDK1.8
-  */
+ * @author dm
+ * @className RedisConfig
+ * @description redis 配置
+ * @date 2020/8/11
+ * @since JDK1.8
+ */
 @Configuration
 public class RedisConfig {
 
@@ -27,12 +27,13 @@ public class RedisConfig {
 
     /**
      * 配置redis序列化为json,方便阅读
+     *
      * @return
      */
     @Bean
     @Primary
-    public RedisTemplate<String,Object> redisTemplate(){
-        RedisTemplate<String,Object> template = new RedisTemplate();
+    public RedisTemplate<String, Object> redisTemplate() {
+        RedisTemplate<String, Object> template = new RedisTemplate();
         template.setConnectionFactory(connectionFactory);
         // 序列化工具
         Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<Object>(Object.class);

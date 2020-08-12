@@ -62,7 +62,7 @@ public class DmSearchServiceImpl implements DmSearchService {
         log.info("开始对book索引进行全量重建");
         // 从Redis获取当前服务节点为谁
         String updatecoreName = redisService.get(RedisKeyPrefixConst.SEARCH_BOOK_CORE_UPDATE, String.class);
-        String currentCoreName = redisService.get( RedisKeyPrefixConst.SEARCH_BOOK_CORE_CURRENT, String.class);
+        String currentCoreName = redisService.get(RedisKeyPrefixConst.SEARCH_BOOK_CORE_CURRENT, String.class);
         log.info("当前备份的索引集合为{}，正在服务中的索引集合为{}", updatecoreName, currentCoreName);
 
         BigInteger result = reIndex();

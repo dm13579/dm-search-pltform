@@ -39,7 +39,6 @@ public class RedisServiceImpl implements RedisService {
         vo.set(key, value, expires, TimeUnit.SECONDS);
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public <T> T get(String key, Class<T> clazz) {
         ValueOperations<String, Object> vo = redisTemplate.opsForValue();

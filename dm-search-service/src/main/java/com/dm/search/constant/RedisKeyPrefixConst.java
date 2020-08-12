@@ -1,9 +1,9 @@
 package com.dm.search.constant;
 
 /**
+ * @author dm
  * @className RedisKeyPrefixConst
  * @description redis key
- * @author dm
  * @date 2020/8/12
  * @since JDK1.8
  */

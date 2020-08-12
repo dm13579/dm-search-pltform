@@ -32,37 +32,37 @@ public enum ResultCode implements IErrorCode {
     /**
      * 请求头中的token为空
      */
-    AUTHORIZATION_HEADER_IS_EMPTY(600,"请求头中的token为空"),
+    AUTHORIZATION_HEADER_IS_EMPTY(600, "请求头中的token为空"),
 
     /**
      * 远程获取TokenKey异常
      */
-    GET_TOKEN_KEY_ERROR(601,"远程获取TokenKey异常"),
+    GET_TOKEN_KEY_ERROR(601, "远程获取TokenKey异常"),
 
     /**
      * 生成公钥异常
      */
-    GEN_PUBLIC_KEY_ERROR(602,"生成公钥异常"),
+    GEN_PUBLIC_KEY_ERROR(602, "生成公钥异常"),
 
     /**
      * token校验异常
      */
-    JWT_TOKEN_EXPIRE(603,"token校验异常"),
+    JWT_TOKEN_EXPIRE(603, "token校验异常"),
 
     /**
      * 后端服务触发流控
      */
-    TOMANY_REQUEST_ERROR(429,"后端服务触发流控"),
+    TOMANY_REQUEST_ERROR(429, "后端服务触发流控"),
 
     /**
      * 后端服务触发降级
      */
-    BACKGROUD_DEGRADE_ERROR(604,"后端服务触发降级"),
+    BACKGROUD_DEGRADE_ERROR(604, "后端服务触发降级"),
 
     /**
      * 网关服务异常
      */
-    BAD_GATEWAY(502,"网关服务异常"),
+    BAD_GATEWAY(502, "网关服务异常"),
 
     /**
      * 没有相关权限
