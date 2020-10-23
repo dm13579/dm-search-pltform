@@ -15,7 +15,6 @@ public class DmSearchServiceApplication {
 
     public static void main(String[] args) {
 
-        //a
         System.setProperty("es.set.netty.runtime.available.processors", "false");
         SpringApplication.run(DmSearchServiceApplication.class, args);
     }
